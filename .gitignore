@@ -1,0 +1,16 @@
+# Terraform state & cache
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Variable overrides with secrets
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+
+# SSH Keys
+*.pem
+*.pub
