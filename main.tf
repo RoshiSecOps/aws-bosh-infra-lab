@@ -102,6 +102,11 @@ resource "aws_instance" "app_server" {
   key_name               = aws_key_pair.deployer.key_name
   subnet_id              = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.bosh-traffic.id]
+  
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = 30
+  }
 
   tags = {
     Name = var.instance_name
